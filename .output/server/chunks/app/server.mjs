@@ -817,7 +817,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     };
     return (_ctx, _push, _parent, _attrs) => {
       const _component_FilterBuilder = _sfc_main$2;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "w-screen h-screen flex bg-slate-900 text-gray-100" }, _attrs))}><div class="max-w-screen-lg w-full mx-auto py-8 flex flex-col items-center justify-center"><div class="flex-1 py-20 max-h-full w-full flex space-x-4"><div class="flex-1"><table class="border-collapse table-fixed w-full text-sm max-h-full"><thead><tr class="w-full"><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left" width="5%">#</th><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left" width="15%"></th><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left">Nama / Perusahaan</th><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left"></th></tr></thead><tbody>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "w-screen h-screen flex bg-slate-900 text-gray-100" }, _attrs))}><div class="max-w-screen-lg w-full mx-auto py-8 flex flex-col items-center justify-center"><div class="flex-1 py-20 max-h-full w-full flex space-x-4"><div class="flex-1"><div class="text-center mb-2 text-sm"><span class="mr-2 font-bold">${ssrInterpolate(unref(filtered_data).length)}</span><span class="mr-2">filtered data from</span><span class="mr-2 font-bold">${ssrInterpolate(unref(datas).length)}</span><span class="mr-2">data</span></div><table class="border-collapse table-fixed w-full text-sm max-h-full"><thead><tr class="w-full"><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left" width="5%">#</th><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left" width="15%"></th><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left">Nama / Perusahaan</th><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left"></th></tr></thead><tbody>`);
       if (unref(loading)) {
         _push(`<tr><td colspan="4" class="text-center">Loading...</td></tr>`);
       } else {
@@ -865,7 +865,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.6e5ab865.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.e6ffbe6d.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());

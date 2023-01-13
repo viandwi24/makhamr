@@ -431,87 +431,87 @@ const errorHandler = (async function errorhandler(error, event) {
 });
 
 const assets = {
-  "/_nuxt/_plugin-vue_export-helper.fb3d7808.js": {
+  "/_nuxt/_plugin-vue_export-helper.604ca0da.js": {
     "type": "application/javascript",
-    "etag": "\"b3-WKt5cJvHsV0pI9kE/1SdH0XArp0\"",
-    "mtime": "2023-01-13T14:54:07.259Z",
+    "etag": "\"b3-3pz4INVhkYN8q647y4/XjdO3pVI\"",
+    "mtime": "2023-01-13T15:14:25.079Z",
     "size": 179,
-    "path": "../public/_nuxt/_plugin-vue_export-helper.fb3d7808.js"
+    "path": "../public/_nuxt/_plugin-vue_export-helper.604ca0da.js"
   },
-  "/_nuxt/entry.ba2b85e7.css": {
+  "/_nuxt/entry.51538125.css": {
     "type": "text/css; charset=utf-8",
-    "etag": "\"1e41-+YJHbRrlm9532BBTIdzALXiy/O0\"",
-    "mtime": "2023-01-13T14:54:07.258Z",
-    "size": 7745,
-    "path": "../public/_nuxt/entry.ba2b85e7.css"
+    "etag": "\"1e5b-pfLpy7mitU3x4ZGPBlbpD14FMEU\"",
+    "mtime": "2023-01-13T15:14:25.078Z",
+    "size": 7771,
+    "path": "../public/_nuxt/entry.51538125.css"
   },
-  "/_nuxt/entry.f0659ad9.js": {
+  "/_nuxt/entry.de87e785.js": {
     "type": "application/javascript",
-    "etag": "\"2206b-zYK0/aD/we7m+G/xpB+vIkVVE90\"",
-    "mtime": "2023-01-13T14:54:07.257Z",
-    "size": 139371,
-    "path": "../public/_nuxt/entry.f0659ad9.js"
-  },
-  "/_nuxt/error-404.324f08cb.js": {
-    "type": "application/javascript",
-    "etag": "\"8dd-S+PvJ0xNND3Ms4eiyhnlei/VyIg\"",
-    "mtime": "2023-01-13T14:54:07.255Z",
-    "size": 2269,
-    "path": "../public/_nuxt/error-404.324f08cb.js"
+    "etag": "\"22175-aM9Fwd7M28tpAn0aZM6DBUhE8K0\"",
+    "mtime": "2023-01-13T15:14:25.076Z",
+    "size": 139637,
+    "path": "../public/_nuxt/entry.de87e785.js"
   },
   "/_nuxt/error-404.8ccf2fec.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"e2e-68eKZYx67s9CKnFHWVX/8c82buY\"",
-    "mtime": "2023-01-13T14:54:07.253Z",
+    "mtime": "2023-01-13T15:14:25.074Z",
     "size": 3630,
     "path": "../public/_nuxt/error-404.8ccf2fec.css"
   },
-  "/_nuxt/error-500.3bec93ae.js": {
+  "/_nuxt/error-404.a1d6acac.js": {
     "type": "application/javascript",
-    "etag": "\"78b-F0xLl3uNGpfSj0EB67IVXJojbQg\"",
-    "mtime": "2023-01-13T14:54:07.252Z",
-    "size": 1931,
-    "path": "../public/_nuxt/error-500.3bec93ae.js"
+    "etag": "\"8dd-S3iUqSMFWcOnv3NVM1PSnpHsH1s\"",
+    "mtime": "2023-01-13T15:14:25.073Z",
+    "size": 2269,
+    "path": "../public/_nuxt/error-404.a1d6acac.js"
   },
   "/_nuxt/error-500.42b82e7a.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"79e-jt/pmAC9IZJecj9LqnPml6NZ4oA\"",
-    "mtime": "2023-01-13T14:54:07.251Z",
+    "mtime": "2023-01-13T15:14:25.072Z",
     "size": 1950,
     "path": "../public/_nuxt/error-500.42b82e7a.css"
   },
-  "/_nuxt/error-component.727371f2.js": {
+  "/_nuxt/error-500.47dfb6d3.js": {
     "type": "application/javascript",
-    "etag": "\"4c9-KjRCTCFu+j5wwzyHSya2AOw2sio\"",
-    "mtime": "2023-01-13T14:54:07.250Z",
+    "etag": "\"78b-q+8AEgjzVLQ6BokDXSN0bNIW85I\"",
+    "mtime": "2023-01-13T15:14:25.072Z",
+    "size": 1931,
+    "path": "../public/_nuxt/error-500.47dfb6d3.js"
+  },
+  "/_nuxt/error-component.525dd6be.js": {
+    "type": "application/javascript",
+    "etag": "\"4c9-I/543IpRdqjW3Kv+X/lOc8DUDCY\"",
+    "mtime": "2023-01-13T15:14:25.071Z",
     "size": 1225,
-    "path": "../public/_nuxt/error-component.727371f2.js"
+    "path": "../public/_nuxt/error-component.525dd6be.js"
   },
   "/data/13-01-2023 20:00.json": {
     "type": "application/json",
     "etag": "\"5cf-k8lPEY1GvY0NeF00AgaGLDXpq4Y\"",
-    "mtime": "2023-01-13T14:54:07.273Z",
+    "mtime": "2023-01-13T15:14:25.113Z",
     "size": 1487,
     "path": "../public/data/13-01-2023 20:00.json"
   },
   "/data/13-01-2023 20:20.json": {
     "type": "application/json",
     "etag": "\"8bd-3KQGcLd8RtnouEDOseiLiuLs8Lo\"",
-    "mtime": "2023-01-13T14:54:07.272Z",
+    "mtime": "2023-01-13T15:14:25.113Z",
     "size": 2237,
     "path": "../public/data/13-01-2023 20:20.json"
   },
   "/data/13-01-2023 21:20.json": {
     "type": "application/json",
     "etag": "\"16d5a9-Y0CkDiXRrF8J8loq81qqUz+3bCA\"",
-    "mtime": "2023-01-13T14:54:07.268Z",
+    "mtime": "2023-01-13T15:14:25.110Z",
     "size": 1496489,
     "path": "../public/data/13-01-2023 21:20.json"
   },
   "/data/all.json": {
     "type": "application/json",
     "etag": "\"45-bDvBvUAPeTcUwAJzaBGjVKCkZaE\"",
-    "mtime": "2023-01-13T14:54:07.262Z",
+    "mtime": "2023-01-13T15:14:25.084Z",
     "size": 69,
     "path": "../public/data/all.json"
   }

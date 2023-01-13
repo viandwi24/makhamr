@@ -23,16 +23,16 @@ const getData = async () => {
       url: '/data/all.json'
     })
     datasheets.value = resDB?.data || []
+    const dssorted = sortDS(datasheets.value)
     if (datasheets.value.length === 0) {
       throw new Error('no datasheet')
     }
     if (!selected_datasheet.value) {
-      selected_datasheet.value = datasheets.value[0]
+      selected_datasheet.value = dssorted[0]
     }
     console.log('selected datasheet', selected_datasheet.value)
 
     // get old data
-    const dssorted = sortDS(datasheets.value)
     const dsCurrIndex = dssorted.findIndex((item) => item === selected_datasheet.value)
     if (dsCurrIndex >= dssorted.length - 1) {
       datasOld.value = []
@@ -141,6 +141,12 @@ const applyFilter = (p: GroupFilter[]) => {
     <div class="max-w-screen-lg w-full mx-auto py-8 flex flex-col items-center justify-center">
       <div class="flex-1 py-20 max-h-full w-full flex space-x-4">
         <div class="flex-1">
+          <div class="text-center mb-2 text-sm">
+            <span class="mr-2 font-bold">{{ filtered_data.length }}</span>
+            <span class="mr-2">filtered data from</span>
+            <span class="mr-2 font-bold">{{ datas.length }}</span>
+            <span class="mr-2">data</span>
+          </div>
           <table class="border-collapse table-fixed w-full text-sm max-h-full">
             <thead>
               <tr class="w-full">
