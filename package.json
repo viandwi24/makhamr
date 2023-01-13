@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "scrape": "node ./tools/scrape.js"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.2.0",
+    "axios": "^1.2.2",
+    "nuxt": "3.0.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.7"
+  }
+}
