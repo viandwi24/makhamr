@@ -434,92 +434,99 @@ const assets = {
   "/_nuxt/_plugin-vue_export-helper.604ca0da.js": {
     "type": "application/javascript",
     "etag": "\"b3-3pz4INVhkYN8q647y4/XjdO3pVI\"",
-    "mtime": "2023-01-17T16:20:16.792Z",
+    "mtime": "2023-01-19T13:48:01.245Z",
     "size": 179,
     "path": "../public/_nuxt/_plugin-vue_export-helper.604ca0da.js"
   },
   "/_nuxt/entry.51538125.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"1e5b-pfLpy7mitU3x4ZGPBlbpD14FMEU\"",
-    "mtime": "2023-01-17T16:20:16.791Z",
+    "mtime": "2023-01-19T13:48:01.245Z",
     "size": 7771,
     "path": "../public/_nuxt/entry.51538125.css"
   },
   "/_nuxt/entry.de87e785.js": {
     "type": "application/javascript",
     "etag": "\"22175-aM9Fwd7M28tpAn0aZM6DBUhE8K0\"",
-    "mtime": "2023-01-17T16:20:16.790Z",
+    "mtime": "2023-01-19T13:48:01.244Z",
     "size": 139637,
     "path": "../public/_nuxt/entry.de87e785.js"
   },
   "/_nuxt/error-404.8ccf2fec.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"e2e-68eKZYx67s9CKnFHWVX/8c82buY\"",
-    "mtime": "2023-01-17T16:20:16.789Z",
+    "mtime": "2023-01-19T13:48:01.244Z",
     "size": 3630,
     "path": "../public/_nuxt/error-404.8ccf2fec.css"
   },
   "/_nuxt/error-404.a1d6acac.js": {
     "type": "application/javascript",
     "etag": "\"8dd-S3iUqSMFWcOnv3NVM1PSnpHsH1s\"",
-    "mtime": "2023-01-17T16:20:16.788Z",
+    "mtime": "2023-01-19T13:48:01.243Z",
     "size": 2269,
     "path": "../public/_nuxt/error-404.a1d6acac.js"
   },
   "/_nuxt/error-500.42b82e7a.css": {
     "type": "text/css; charset=utf-8",
     "etag": "\"79e-jt/pmAC9IZJecj9LqnPml6NZ4oA\"",
-    "mtime": "2023-01-17T16:20:16.788Z",
+    "mtime": "2023-01-19T13:48:01.243Z",
     "size": 1950,
     "path": "../public/_nuxt/error-500.42b82e7a.css"
   },
   "/_nuxt/error-500.47dfb6d3.js": {
     "type": "application/javascript",
     "etag": "\"78b-q+8AEgjzVLQ6BokDXSN0bNIW85I\"",
-    "mtime": "2023-01-17T16:20:16.787Z",
+    "mtime": "2023-01-19T13:48:01.242Z",
     "size": 1931,
     "path": "../public/_nuxt/error-500.47dfb6d3.js"
   },
   "/_nuxt/error-component.525dd6be.js": {
     "type": "application/javascript",
     "etag": "\"4c9-I/543IpRdqjW3Kv+X/lOc8DUDCY\"",
-    "mtime": "2023-01-17T16:20:16.786Z",
+    "mtime": "2023-01-19T13:48:01.242Z",
     "size": 1225,
     "path": "../public/_nuxt/error-component.525dd6be.js"
   },
   "/data/13-01-2023 20:00.json": {
     "type": "application/json",
     "etag": "\"5cf-k8lPEY1GvY0NeF00AgaGLDXpq4Y\"",
-    "mtime": "2023-01-17T16:20:16.811Z",
+    "mtime": "2023-01-19T13:48:01.263Z",
     "size": 1487,
     "path": "../public/data/13-01-2023 20:00.json"
   },
   "/data/13-01-2023 20:20.json": {
     "type": "application/json",
     "etag": "\"8bd-3KQGcLd8RtnouEDOseiLiuLs8Lo\"",
-    "mtime": "2023-01-17T16:20:16.810Z",
+    "mtime": "2023-01-19T13:48:01.263Z",
     "size": 2237,
     "path": "../public/data/13-01-2023 20:20.json"
   },
   "/data/13-01-2023 21:20.json": {
     "type": "application/json",
     "etag": "\"16d5a9-Y0CkDiXRrF8J8loq81qqUz+3bCA\"",
-    "mtime": "2023-01-17T16:20:16.809Z",
+    "mtime": "2023-01-19T13:48:01.261Z",
     "size": 1496489,
     "path": "../public/data/13-01-2023 21:20.json"
   },
   "/data/17-01-2023 23:19.json": {
     "type": "application/json",
     "etag": "\"1e6224-qKl3S7RCTA5hkKTpeQrlUIhajdk\"",
-    "mtime": "2023-01-17T16:20:16.802Z",
+    "mtime": "2023-01-19T13:48:01.256Z",
     "size": 1991204,
     "path": "../public/data/17-01-2023 23:19.json"
   },
+  "/data/19-01-2023 20:46.json": {
+    "type": "application/json",
+    "etag": "\"213c3c-S89jc+m4f8PpIbmys6yxJ+in71U\"",
+    "mtime": "2023-01-19T13:48:01.251Z",
+    "size": 2178108,
+    "path": "../public/data/19-01-2023 20:46.json"
+  },
   "/data/all.json": {
     "type": "application/json",
-    "etag": "\"5a-HhPanytAutIJ05TsxCoz4/w5RyU\"",
-    "mtime": "2023-01-17T16:20:16.796Z",
-    "size": 90,
+    "etag": "\"71-Agt5T/dGQX5YH6ElMJpcV6dd8bU\"",
+    "mtime": "2023-01-19T13:48:01.246Z",
+    "size": 113,
     "path": "../public/data/all.json"
   }
 };
