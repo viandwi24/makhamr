@@ -815,9 +815,31 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
         });
       });
     };
+    const pagination = ref({
+      page: 1,
+      per_page: 10
+    });
+    const displayed_data = computed(() => {
+      try {
+        const { page, per_page } = pagination.value;
+        const start = (page - 1) * per_page;
+        const end = start + per_page;
+        return filtered_data.value.slice(start, end);
+      } catch (error) {
+        pagination.value.page = 1;
+        pagination.value.per_page = 10;
+        return filtered_data.value;
+      }
+    });
+    const pagination_page_count = computed(() => {
+      return Math.ceil(filtered_data.value.length / pagination.value.per_page);
+    });
+    const pagination_current_started_index = computed(() => {
+      return (pagination.value.page - 1) * pagination.value.per_page + 1;
+    });
     return (_ctx, _push, _parent, _attrs) => {
       const _component_FilterBuilder = _sfc_main$2;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "w-screen h-screen flex bg-slate-900 text-gray-100" }, _attrs))}><div class="max-w-screen-lg w-full mx-auto py-8 flex flex-col items-center justify-center"><div class="flex-1 py-20 max-h-full w-full flex space-x-4"><div class="flex-1"><div class="text-center mb-2 text-sm"><span class="mr-2 font-bold">${ssrInterpolate(unref(filtered_data).length)}</span><span class="mr-2">filtered data from</span><span class="mr-2 font-bold">${ssrInterpolate(unref(datas).length)}</span><span class="mr-2">data</span></div><table class="border-collapse table-fixed w-full text-sm max-h-full"><thead><tr class="w-full"><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left" width="5%">#</th><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left" width="15%"></th><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left">Nama / Perusahaan</th><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left"></th></tr></thead><tbody>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "w-screen h-screen flex bg-slate-900 text-gray-100" }, _attrs))}><div class="max-w-screen-lg w-full mx-auto py-8 flex flex-col items-center justify-center"><div class="flex-1 py-20 max-h-full w-full flex space-x-4"><div class="flex-1"><div class="text-center mb-2 text-sm"><span class="mr-2 font-bold">${ssrInterpolate(unref(filtered_data).length)}</span><span class="mr-2">filtered data from</span><span class="mr-2 font-bold">${ssrInterpolate(unref(datas).length)}</span><span class="mr-2">data</span></div><div class="mt-2 mb-6 flex"><div class="flex space-x-2 items-center"><div>Per Page Item : </div><div class="flex-1"><select class="w-full"><option value="10">10</option><option value="20">20</option><option value="50">50</option><option value="100">100</option><option value="200">200</option><option value="500">500</option><option value="1000">1000</option><option value="2000">2000</option><option value="2000">999999999999999</option></select></div></div></div><table class="border-collapse table-fixed w-full text-sm max-h-full"><thead><tr class="w-full"><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left" width="5%">#</th><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left" width="15%"></th><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left">Nama / Perusahaan</th><th class="border-b-2 border-slate-200/80 font-bold p-4 pt-0 text-slate-400 text-left"></th></tr></thead><tbody>`);
       if (unref(loading)) {
         _push(`<tr><td colspan="4" class="text-center">Loading...</td></tr>`);
       } else {
@@ -825,14 +847,14 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       }
       if (!unref(loading)) {
         _push(`<!--[-->`);
-        ssrRenderList(unref(filtered_data), (item, i) => {
-          _push(`<tr><td width="5%" class="${ssrRenderClass([{ "bg-green-600/60": unref(options).highlightNewData && isNewData(item.id) }, "border-b border-slate-200/80 p-4 text-slate-200"])}">${ssrInterpolate(i + 1)}</td><td width="15%" class="${ssrRenderClass([{ "bg-green-600/60": unref(options).highlightNewData && isNewData(item.id) }, "border-b border-slate-200/80 p-4 text-slate-200"])}"><div class="text-center flex justify-center items-center"><img class="w-10 h-10 rounded-full"${ssrRenderAttr("src", item.logo)} alt="avatar"></div></td><td class="${ssrRenderClass([{ "bg-green-600/60": unref(options).highlightNewData && isNewData(item.id) }, "border-b border-slate-200/80 p-4 text-slate-200"])}"><div class="font-bold">${ssrInterpolate(item.name)}</div><div class="text-xs"><span>${ssrInterpolate(item.activity_name)}</span><span class="font-semibold">(${ssrInterpolate(item.mitra_name)})</span></div></td><td class="${ssrRenderClass([{ "bg-green-600/60": unref(options).highlightNewData && isNewData(item.id) }, "border-b border-slate-200/80 p-4 text-slate-200"])}"><div class="flex space-x-2"><a${ssrRenderAttr("href", `https://kampusmerdeka.kemdikbud.go.id/program/magang/browse/${item.mitra_id}/${item.id}`)} target="_blank" class="text-xs text-blue-400 underline"> Buka di kampusmerdeka </a></div></td></tr>`);
+        ssrRenderList(unref(displayed_data), (item, i) => {
+          _push(`<tr><td width="5%" class="${ssrRenderClass([{ "bg-green-600/60": unref(options).highlightNewData && isNewData(item.id) }, "border-b border-slate-200/80 p-4 text-slate-200"])}">${ssrInterpolate(i + unref(pagination_current_started_index))}</td><td width="15%" class="${ssrRenderClass([{ "bg-green-600/60": unref(options).highlightNewData && isNewData(item.id) }, "border-b border-slate-200/80 p-4 text-slate-200"])}"><div class="text-center flex justify-center items-center"><img class="w-10 h-10 rounded-full"${ssrRenderAttr("src", item.logo)} alt="avatar"></div></td><td class="${ssrRenderClass([{ "bg-green-600/60": unref(options).highlightNewData && isNewData(item.id) }, "border-b border-slate-200/80 p-4 text-slate-200"])}"><div class="font-bold">${ssrInterpolate(item.name)}</div><div class="text-xs"><span>${ssrInterpolate(item.activity_name)}</span><span class="font-semibold">(${ssrInterpolate(item.mitra_name)})</span></div></td><td class="${ssrRenderClass([{ "bg-green-600/60": unref(options).highlightNewData && isNewData(item.id) }, "border-b border-slate-200/80 p-4 text-slate-200"])}"><div class="flex space-x-2"><a${ssrRenderAttr("href", `https://kampusmerdeka.kemdikbud.go.id/program/magang/browse/${item.mitra_id}/${item.id}`)} target="_blank" class="text-xs text-blue-400 underline"> Buka di kampusmerdeka </a></div></td></tr>`);
         });
         _push(`<!--]-->`);
       } else {
         _push(`<!---->`);
       }
-      _push(`</tbody></table></div><div class="w-[260px] flex space-y-4 flex-col"><div class="w-full bg-slate-800 rounded text-sm"><div class="px-4 py-2 border-b-2 border-gray-400/50"> Datasheets </div><div class="px-4 py-2 flex flex-col text-left justify-start items-start"><!--[-->`);
+      _push(`</tbody></table><div class="mt-2"><div class="flex justify-between items-center"><div class="flex space-x-2"><button class="${ssrRenderClass([{ "text-gray-200": unref(pagination).page > 1 }, "px-2 py-1 rounded bg-slate-800/50 text-xs text-gray-400"])}"${ssrIncludeBooleanAttr(unref(pagination).page <= 1) ? " disabled" : ""}> Prev </button><button class="${ssrRenderClass([{ "text-gray-200": unref(pagination).page < unref(pagination_page_count) }, "px-2 py-1 rounded bg-slate-800/50 text-xs text-gray-400"])}"${ssrIncludeBooleanAttr(unref(pagination).page >= unref(pagination_page_count)) ? " disabled" : ""}> Next </button></div></div></div></div><div class="w-[260px] flex space-y-4 flex-col"><div class="w-full bg-slate-800 rounded text-sm"><div class="px-4 py-2 border-b-2 border-gray-400/50"> Datasheets </div><div class="px-4 py-2 flex flex-col text-left justify-start items-start"><!--[-->`);
       ssrRenderList(unref(filtered_datasheets), (data) => {
         _push(`<button class="${ssrRenderClass([{
           "text-gray-400": !(unref(selected_datasheet) === data),
@@ -865,7 +887,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.e6ffbe6d.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.9945d429.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());

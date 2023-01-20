@@ -134,6 +134,30 @@ const applyFilter = (p: GroupFilter[]) => {
   })
 }
 
+// pagination builder
+const pagination = ref({
+  page: 1,
+  per_page: 10
+})
+const displayed_data = computed(() => {
+  try {
+    const { page, per_page } = pagination.value
+    const start = (page - 1) * per_page
+    const end = start + per_page
+    return filtered_data.value.slice(start, end)
+  } catch (error) {
+    pagination.value.page = 1
+    pagination.value.per_page = 10
+    return filtered_data.value
+  }
+})
+const pagination_page_count = computed(() => {
+  return Math.ceil(filtered_data.value.length / pagination.value.per_page)
+})
+const pagination_current_started_index = computed(() => {
+  return (pagination.value.page - 1) * pagination.value.per_page + 1
+})
+
 </script>
 
 <template>
@@ -146,6 +170,25 @@ const applyFilter = (p: GroupFilter[]) => {
             <span class="mr-2">filtered data from</span>
             <span class="mr-2 font-bold">{{ datas.length }}</span>
             <span class="mr-2">data</span>
+          </div>
+          <div class="mt-2 mb-6 flex">
+            <!-- page -->
+            <div class="flex space-x-2 items-center">
+              <div>Per Page Item : </div>
+              <div class="flex-1">
+                <select v-model="pagination.per_page" class="w-full">
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+                  <option value="200">200</option>
+                  <option value="500">500</option>
+                  <option value="1000">1000</option>
+                  <option value="2000">2000</option>
+                  <option value="2000">999999999999999</option>
+                </select>
+              </div>
+            </div>
           </div>
           <table class="border-collapse table-fixed w-full text-sm max-h-full">
             <thead>
@@ -163,9 +206,9 @@ const applyFilter = (p: GroupFilter[]) => {
                 </tr>
               </template>
               <template v-if="!loading">
-                <tr v-for="(item, i) in filtered_data" :key="Math.random()">
+                <tr v-for="(item, i) in displayed_data" :key="Math.random()">
                   <td class="border-b border-slate-200/80 p-4 text-slate-200" width="5%" :class="{ 'bg-green-600/60': options.highlightNewData && isNewData(item.id) }">
-                    {{ i+1 }}
+                    {{ i+pagination_current_started_index }}
                   </td>
                   <td class="border-b border-slate-200/80 p-4 text-slate-200" width="15%" :class="{ 'bg-green-600/60': options.highlightNewData && isNewData(item.id) }">
                     <div class="text-center flex justify-center items-center">
@@ -194,6 +237,29 @@ const applyFilter = (p: GroupFilter[]) => {
               </template>
             </tbody>
           </table>
+          <div class="mt-2">
+            <!-- pagination -->
+            <div class="flex justify-between items-center">
+              <div class="flex space-x-2">
+                <button
+                  class="px-2 py-1 rounded bg-slate-800/50 text-xs text-gray-400"
+                  :class="{ 'text-gray-200': pagination.page > 1 }"
+                  :disabled="pagination.page <= 1"
+                  @click="() => pagination.page--"
+                >
+                  Prev
+                </button>
+                <button
+                  class="px-2 py-1 rounded bg-slate-800/50 text-xs text-gray-400"
+                  :class="{ 'text-gray-200': pagination.page < pagination_page_count }"
+                  :disabled="pagination.page >= pagination_page_count"
+                  @click="() => pagination.page++"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="w-[260px] flex space-y-4 flex-col">
           <div class="w-full bg-slate-800 rounded text-sm">
