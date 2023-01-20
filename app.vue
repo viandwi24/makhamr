@@ -237,10 +237,10 @@ const pagination_current_started_index = computed(() => {
               </template>
             </tbody>
           </table>
-          <div class="mt-2">
+          <div class="mt-2 w-full">
             <!-- pagination -->
-            <div class="flex justify-between items-center">
-              <div class="flex space-x-2">
+            <div class="flex justify-center items-center max-w-full">
+              <div class="flex justify-center items-center space-x-2">
                 <button
                   class="px-2 py-1 rounded bg-slate-800/50 text-xs text-gray-400"
                   :class="{ 'text-gray-200': pagination.page > 1 }"
@@ -249,6 +249,11 @@ const pagination_current_started_index = computed(() => {
                 >
                   Prev
                 </button>
+                <div class="flex-1">
+                  <select v-model="pagination.page" class="w-full">
+                    <option v-for="i in pagination_page_count" :key="i" :value="i">{{ i }}</option>
+                  </select>
+                </div>
                 <button
                   class="px-2 py-1 rounded bg-slate-800/50 text-xs text-gray-400"
                   :class="{ 'text-gray-200': pagination.page < pagination_page_count }"

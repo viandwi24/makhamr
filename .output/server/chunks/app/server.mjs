@@ -854,7 +854,11 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       } else {
         _push(`<!---->`);
       }
-      _push(`</tbody></table><div class="mt-2"><div class="flex justify-between items-center"><div class="flex space-x-2"><button class="${ssrRenderClass([{ "text-gray-200": unref(pagination).page > 1 }, "px-2 py-1 rounded bg-slate-800/50 text-xs text-gray-400"])}"${ssrIncludeBooleanAttr(unref(pagination).page <= 1) ? " disabled" : ""}> Prev </button><button class="${ssrRenderClass([{ "text-gray-200": unref(pagination).page < unref(pagination_page_count) }, "px-2 py-1 rounded bg-slate-800/50 text-xs text-gray-400"])}"${ssrIncludeBooleanAttr(unref(pagination).page >= unref(pagination_page_count)) ? " disabled" : ""}> Next </button></div></div></div></div><div class="w-[260px] flex space-y-4 flex-col"><div class="w-full bg-slate-800 rounded text-sm"><div class="px-4 py-2 border-b-2 border-gray-400/50"> Datasheets </div><div class="px-4 py-2 flex flex-col text-left justify-start items-start"><!--[-->`);
+      _push(`</tbody></table><div class="mt-2 w-full"><div class="flex justify-center items-center max-w-full"><div class="flex justify-center items-center space-x-2"><button class="${ssrRenderClass([{ "text-gray-200": unref(pagination).page > 1 }, "px-2 py-1 rounded bg-slate-800/50 text-xs text-gray-400"])}"${ssrIncludeBooleanAttr(unref(pagination).page <= 1) ? " disabled" : ""}> Prev </button><div class="flex-1"><select class="w-full"><!--[-->`);
+      ssrRenderList(unref(pagination_page_count), (i) => {
+        _push(`<option${ssrRenderAttr("value", i)}>${ssrInterpolate(i)}</option>`);
+      });
+      _push(`<!--]--></select></div><button class="${ssrRenderClass([{ "text-gray-200": unref(pagination).page < unref(pagination_page_count) }, "px-2 py-1 rounded bg-slate-800/50 text-xs text-gray-400"])}"${ssrIncludeBooleanAttr(unref(pagination).page >= unref(pagination_page_count)) ? " disabled" : ""}> Next </button></div></div></div></div><div class="w-[260px] flex space-y-4 flex-col"><div class="w-full bg-slate-800 rounded text-sm"><div class="px-4 py-2 border-b-2 border-gray-400/50"> Datasheets </div><div class="px-4 py-2 flex flex-col text-left justify-start items-start"><!--[-->`);
       ssrRenderList(unref(filtered_datasheets), (data) => {
         _push(`<button class="${ssrRenderClass([{
           "text-gray-400": !(unref(selected_datasheet) === data),
@@ -887,7 +891,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.9945d429.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./_nuxt/error-component.4afde035.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();
     provide("_route", useRoute());
