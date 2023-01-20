@@ -70,15 +70,15 @@ const client_manifest = {
     "file": "error-500.42b82e7a.css",
     "resourceType": "style"
   },
-  "node_modules/.pnpm/@nuxt+ui-templates@1.1.0/node_modules/@nuxt/ui-templates/dist/templates/error-500.css": {
-    "resourceType": "style",
-    "file": "error-500.42b82e7a.css",
-    "src": "node_modules/.pnpm/@nuxt+ui-templates@1.1.0/node_modules/@nuxt/ui-templates/dist/templates/error-500.css"
-  },
   "node_modules/.pnpm/@nuxt+ui-templates@1.1.0/node_modules/@nuxt/ui-templates/dist/templates/error-404.css": {
     "resourceType": "style",
     "file": "error-404.8ccf2fec.css",
     "src": "node_modules/.pnpm/@nuxt+ui-templates@1.1.0/node_modules/@nuxt/ui-templates/dist/templates/error-404.css"
+  },
+  "node_modules/.pnpm/@nuxt+ui-templates@1.1.0/node_modules/@nuxt/ui-templates/dist/templates/error-500.css": {
+    "resourceType": "style",
+    "file": "error-500.42b82e7a.css",
+    "src": "node_modules/.pnpm/@nuxt+ui-templates@1.1.0/node_modules/@nuxt/ui-templates/dist/templates/error-500.css"
   },
   "node_modules/.pnpm/nuxt@3.0.0/node_modules/nuxt/dist/app/entry.css": {
     "resourceType": "style",
